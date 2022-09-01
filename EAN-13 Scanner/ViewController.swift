@@ -21,6 +21,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newScanButton.layer.cornerRadius = 7
+        newScanButton.addTarget(self, action: #selector(newScan), for: .touchUpInside)
         StartScanScreen()
         view.isUserInteractionEnabled = true
     
@@ -86,8 +88,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         previewLayer.frame = self.view.layer.bounds
         previewLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(previewLayer)
-
+        
+        view.bringSubviewToFront(scanScreenView)
+        view.bringSubviewToFront(newScanButton)
+        view.bringSubviewToFront(lightButton)
         captureSession.startRunning()
+    }
+    
+    @objc func newScan(){
+        StartScanScreen()
     }
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
