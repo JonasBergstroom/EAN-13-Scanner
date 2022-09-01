@@ -104,8 +104,29 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
+            guard let stringValue = readableObject.stringValue else { return }
+            foundBarCode(code: stringValue)
         }
 
         dismiss(animated: true)
+    }
+    
+    func foundBarCode(code: String) {
+        
+        let duration: Double = 0.5
+        let durationend: Double = 3
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
+            
+            let ac = UIAlertController(title: "Scanning Success!", message: "\(code)", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                _ in
+            }))
+            self.present(ac, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + durationend) {
+            self.dismiss(animated: true)
+            }
+        }
     }
 }
