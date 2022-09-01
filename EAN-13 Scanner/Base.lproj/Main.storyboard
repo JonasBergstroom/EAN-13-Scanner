@@ -29,6 +29,9 @@
                                 <color key="tintColor" red="0.4941176176" green="0.79607844350000001" blue="0.97647058959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Light"/>
+                                <connections>
+                                    <action selector="flashLight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3c-H1-NXf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvp-AE-gkE" userLabel="newScanBtn" customClass="NEW">
                                 <rect key="frame" x="40" y="690" width="334" height="61"/>
