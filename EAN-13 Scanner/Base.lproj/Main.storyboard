@@ -30,7 +30,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Light"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvp-AE-gkE" userLabel="newScanBtn" customClass="CANCEL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvp-AE-gkE" userLabel="newScanBtn" customClass="NEW">
                                 <rect key="frame" x="40" y="690" width="334" height="61"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
@@ -56,6 +56,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2lq-Fu-SzZ" secondAttribute="trailing" id="zc4-6Y-CuX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lightButton" destination="7iO-vw-BhH" id="yRs-bn-qNb"/>
+                        <outlet property="newScanButton" destination="gvp-AE-gkE" id="wtV-Sh-qbg"/>
+                        <outlet property="scanScreenView" destination="2lq-Fu-SzZ" id="GA5-vi-iQf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,7 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var scanScreenView: UIImageView!
+    @IBOutlet weak var lightButton: UIButton!
+    @IBOutlet weak var newScanButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
