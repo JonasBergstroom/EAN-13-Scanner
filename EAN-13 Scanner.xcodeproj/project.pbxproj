@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E76263828C22690003C8F98 /* TorchLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E76263728C22690003C8F98 /* TorchLight.swift */; };
 		2EF7051628C11FFF00B844BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7051528C11FFF00B844BF /* AppDelegate.swift */; };
 		2EF7051828C11FFF00B844BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7051728C11FFF00B844BF /* SceneDelegate.swift */; };
 		2EF7051A28C11FFF00B844BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7051928C11FFF00B844BF /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E76263728C22690003C8F98 /* TorchLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchLight.swift; sourceTree = "<group>"; };
 		2EF7051228C11FFF00B844BF /* EAN-13 Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EAN-13 Scanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF7051528C11FFF00B844BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EF7051728C11FFF00B844BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E76263428C22658003C8F98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E76263728C22690003C8F98 /* TorchLight.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E76263528C2265E003C8F98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EF7051B28C11FFF00B844BF /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E76263628C22664003C8F98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2EF7051928C11FFF00B844BF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		2EF7050928C11FFF00B844BF = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +82,11 @@
 		2EF7051428C11FFF00B844BF /* EAN-13 Scanner */ = {
 			isa = PBXGroup;
 			children = (
+				2E76263428C22658003C8F98 /* Model */,
+				2E76263528C2265E003C8F98 /* View */,
+				2E76263628C22664003C8F98 /* Controller */,
 				2EF7051528C11FFF00B844BF /* AppDelegate.swift */,
 				2EF7051728C11FFF00B844BF /* SceneDelegate.swift */,
-				2EF7051928C11FFF00B844BF /* ViewController.swift */,
-				2EF7051B28C11FFF00B844BF /* Main.storyboard */,
 				2EF7051E28C1200000B844BF /* Assets.xcassets */,
 				2EF7052028C1200000B844BF /* LaunchScreen.storyboard */,
 				2EF7052328C1200000B844BF /* Info.plist */,
@@ -141,6 +168,7 @@
 				2EF7051A28C11FFF00B844BF /* ViewController.swift in Sources */,
 				2EF7051628C11FFF00B844BF /* AppDelegate.swift in Sources */,
 				2EF7051828C11FFF00B844BF /* SceneDelegate.swift in Sources */,
+				2E76263828C22690003C8F98 /* TorchLight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

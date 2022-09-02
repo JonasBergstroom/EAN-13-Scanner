@@ -17,6 +17,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
+    var torchLight = TorchLightViewController()
+
     private var torch = false
     
     override func viewDidLoad() {
@@ -28,32 +30,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     }
     
-    // Flashlight on or off options.
-    
-    func toggleTorch(on: Bool) {
-        guard let device = AVCaptureDevice.default(for: .video) else { return }
-        if device.hasTorch {
-            do {
-                try device.lockForConfiguration()
-                
-                if on == true {
-                    device.torchMode = .on
-                } else {
-                    device.torchMode = .off
-                }
-
-                device.unlockForConfiguration()
-            } catch {
-                print("Torch could not be used")
-            }
-        } else {
-            print("Torch is not available")
-        }
-    }
-    
     @IBAction func flashLight(_ sender: UIButton) {
         torch.toggle()
-        toggleTorch(on: torch)
+        torchLight.toggleTorch(on: torch)
     }
     
     // The main Screen of the app.
