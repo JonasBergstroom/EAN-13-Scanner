@@ -129,4 +129,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
         }
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
 }
