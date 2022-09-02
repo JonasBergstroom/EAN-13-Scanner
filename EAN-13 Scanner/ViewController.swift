@@ -33,7 +33,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         if device.hasTorch {
             do {
                 try device.lockForConfiguration()
-
+                
                 if on == true {
                     device.torchMode = .on
                 } else {
@@ -66,12 +66,14 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         do {
             videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
         } catch {
+            failed()
             return
         }
 
         if (captureSession.canAddInput(videoInput)) {
             captureSession.addInput(videoInput)
         } else {
+            failed()
             return
         }
         if (captureSession.canAddOutput(metadataOutput)) {
@@ -93,6 +95,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.bringSubviewToFront(newScanButton)
         view.bringSubviewToFront(lightButton)
         captureSession.startRunning()
+    }
+    
+    func failed() {
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning this code from the item. Please use a device with a camera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
     }
     
     @objc func newScan(){
