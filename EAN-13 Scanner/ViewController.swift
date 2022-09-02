@@ -28,6 +28,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     }
     
+    // Flashlight on or off options.
+    
     func toggleTorch(on: Bool) {
         guard let device = AVCaptureDevice.default(for: .video) else { return }
         if device.hasTorch {
@@ -53,6 +55,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         torch.toggle()
         toggleTorch(on: torch)
     }
+    
+    // The main Screen of the app.
     
     func StartScanScreen(){
         
@@ -96,6 +100,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         view.bringSubviewToFront(lightButton)
         captureSession.startRunning()
     }
+    // Fail function for the captureSession.
     
     func failed() {
         let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning this code from the item. Please use a device with a camera.", preferredStyle: .alert)
@@ -104,9 +109,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         captureSession = nil
     }
     
+    // Refreshes the view for a new scan.
+    
     @objc func newScan(){
         StartScanScreen()
     }
+    
+    // Adding it as an output to an AVCaptureSession object.
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
@@ -120,19 +129,22 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         dismiss(animated: true)
     }
     
+    // Triggered when a valid barcode is found.
+    
     func foundBarCode(code: String) {
         
         let duration: Double = 0.5
         let durationend: Double = 3
         
-        
+        // Makes the alert window to pop up after 0.5 sec after a barcode is found.
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + duration) {
-            
             let ac = UIAlertController(title: "Scanning Success!", message: "\(code)", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {
                 _ in
             }))
+        
             self.present(ac, animated: true)
+            // Makes the alert go away after 3 sec.
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + durationend) {
             self.dismiss(animated: true)
             }
